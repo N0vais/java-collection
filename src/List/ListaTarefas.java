@@ -12,9 +12,9 @@ public ListaTarefas() {
 }
 
 public static void adicionarTarefa(String descricao){
-    tarefaList.add(new Tarefas(descricao));
+     tarefaList.add(new Tarefas(descricao));
 }
-    public void removerTarefa(String descricao){
+    public static void removerTarefa(String descricao){
         List<Tarefas> tarefasParaRemover = new ArrayList<>();
         for(Tarefas t : tarefaList){
             if(t.getDescricao().equalsIgnoreCase(descricao)){
@@ -28,7 +28,7 @@ public static void adicionarTarefa(String descricao){
         return tarefaList.size();
     }
 
-    public void obterDecricoesTarefas(){
+    public static void obterDecricoesTarefas(){
         System.out.println(tarefaList);
     }
     public static void main(String[] args) {
@@ -36,7 +36,15 @@ public static void adicionarTarefa(String descricao){
         System.out.println(listaTarefas.obterNumeroTotalTarefas());
         
         ListaTarefas.adicionarTarefa("tarefa 1");
-        
+        ListaTarefas.adicionarTarefa("tarefa 1");
+        ListaTarefas.adicionarTarefa("tarefa 1");
+        ListaTarefas.adicionarTarefa("tarefa 1");
+        ListaTarefas.adicionarTarefa("tarefa 2");
         System.out.println(listaTarefas.obterNumeroTotalTarefas());
+
+        ListaTarefas.removerTarefa("tarefa 1");
+        System.out.println("O numero total de elementos é: " + listaTarefas.obterNumeroTotalTarefas());
+
+        ListaTarefas.obterDecricoesTarefas();
     }
 }
